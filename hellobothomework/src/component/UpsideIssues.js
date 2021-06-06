@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-function UpsideIssues({ upData }) {
-  return (
+function UpsideIssues({ upData, isDetail, setIsDetail }) {
+  const handlegetDetail = () => {
+    setIsDetail(true);
+  };
+  return !isDetail ? (
     <div id="upsideWrap">
       {upData.map((data) => (
-        <InputArea key={data.id}>
+        <InputArea key={data.id} onClick={() => handlegetDetail()}>
           <div className="issuehead">
             <span>{`## ${data.number}`}</span>
             <span>{data.title}</span>
@@ -23,6 +26,8 @@ function UpsideIssues({ upData }) {
         </InputArea>
       ))}
     </div>
+  ) : (
+    <div></div>
   );
 }
 

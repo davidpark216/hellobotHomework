@@ -35,10 +35,18 @@ function App() {
     <Wrap>
       <div className="wrap">
         <h2 className="mainHead">Angular/Angular.cli</h2>
-        <UpsideIssues upData={upData} />
-        <Advertisement />
-        <DownsideIssues downData={downData} />
-        <IssueDetail />
+        <UpsideIssues
+          upData={upData}
+          isDetail={isDetail}
+          setIsDetail={setIsDetail}
+        />
+        <Advertisement isDetail={isDetail} />
+        <DownsideIssues
+          downData={downData}
+          isDetail={isDetail}
+          setIsDetail={setIsDetail}
+        />
+        <IssueDetail isDetail={isDetail} setIsDetail={setIsDetail} />
       </div>
     </Wrap>
   );

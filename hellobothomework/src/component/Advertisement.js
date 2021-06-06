@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-function Advertisement() {
-  return (
+function Advertisement({ isDetail }) {
+  return !isDetail ? (
     <Adwrap>
       <div id="imgArea">ad</div>
     </Adwrap>
+  ) : (
+    <div></div>
   );
 }
 
